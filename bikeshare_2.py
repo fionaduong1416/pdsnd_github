@@ -13,12 +13,6 @@ MONTH_MAPPING = {
     'apr': "april",
     'may': "may",
     'jun': "june",
-    'jul': "july",
-    'aug': "august",
-    'sep': "september",
-    'oct': "october",
-    'nov': "november",
-    'dec': "december"
 }
 
 DAY_MAPPING = {
@@ -65,7 +59,6 @@ def get_filters():
     while not isValid:
         monthInput = input(
             "Please Enter A Month (jan, feb, mar, apr, ..., dec) or press enter to analyze all months: ").strip().lower()
-        print(monthInput)
         if monthInput == "":
             month = "all"
             isValid = True
@@ -82,7 +75,6 @@ def get_filters():
     while not isValid:
         dayInput = input(
             "Please Enter A Day Of The Week (mon, tue, wed, ..., sun) or press enter to analyze all days of the week: ").strip().lower()
-        print(monthInput)
         if dayInput == "":
             day = "all"
             isValid = True
@@ -117,10 +109,8 @@ def load_data(city, month, day):
 
     # Filter by month
     if month != 'all':
-        months = ['january', 'february', 'march', 'april', 'may', 'june',
-                  'july', 'august', 'september', 'october', 'november', 'december']
+        months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-
         df = df[df['month'] == month]
 
     # Filter by month
@@ -132,7 +122,6 @@ def load_data(city, month, day):
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
-
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
