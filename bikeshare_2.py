@@ -79,7 +79,7 @@ def get_filters():
             day = "all"
             isValid = True
         elif dayInput in DAY_MAPPING:
-            day = MONTH_MAPPING[monthInput]
+            day = DAY_MAPPING[dayInput]
             isValid = True
         else:
             print("Invalid Input")
